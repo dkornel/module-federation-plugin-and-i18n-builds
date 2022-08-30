@@ -13,6 +13,11 @@
 			"root": "projects/shell",
 			"sourceRoot": "projects/shell/src",
 			"prefix": "app",
+            "i18n": {
+                "sourceLocale": {
+                    "code": "en"
+                }
+            },
 			"architect": {
 				"build": {
 					"builder": "ngx-build-plus:browser",
@@ -31,7 +36,8 @@
 						],
 						"scripts": [],
 						"extraWebpackConfig": "projects/shell/webpack.config.js",
-						"commonChunk": false
+						"commonChunk": false,
+                        "localize": ["en"]
 					},
 					"configurations": {
 						"production": {
@@ -121,6 +127,11 @@
 			"root": "projects/mfe1",
 			"sourceRoot": "projects/mfe1/src",
 			"prefix": "app",
+            "i18n": {
+                "sourceLocale": {
+                    "code": "en"
+                }
+            },
 			"architect": {
 				"build": {
 					"builder": "ngx-build-plus:browser",
@@ -139,7 +150,8 @@
 						],
 						"scripts": [],
 						"extraWebpackConfig": "projects/mfe1/webpack.config.js",
-						"commonChunk": false
+						"commonChunk": false,
+                        "localize": ["en"]
 					},
 					"configurations": {
 						"production": {

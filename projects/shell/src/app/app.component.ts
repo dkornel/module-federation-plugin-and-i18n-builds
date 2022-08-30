@@ -1,17 +1,18 @@
-import { Component, ViewChild, ViewContainerRef, ɵrenderComponent as renderComponent, Inject, Injector, ComponentFactoryResolver } from '@angular/core';
+import { Component, Inject, LOCALE_ID } from '@angular/core';
 import { AuthLibService } from 'auth-lib';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
   title = 'shell';
+  welcomeMessage = $localize`Welcome Shell App`;
 
-  constructor(private service: AuthLibService, http: HttpClient) {
+  constructor(
+    @Inject(LOCALE_ID) public readonly localeId: string,
+    private service: AuthLibService
+  ) {
     this.service.login('Max', null);
   }
-
 }
-
